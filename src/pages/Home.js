@@ -12,6 +12,7 @@ const Home = () => {
 
     const verify_username = () => {
         let count = 0
+        let flag = true;
         // checks if contains only letters, digits and `_`, `-`
         for (let i = 0; i < userName.length; i++) {
             let l = userName.charAt(i).charCodeAt(0);
@@ -20,11 +21,11 @@ const Home = () => {
             }
             else {
                 // contains illegal char
-                count = 0;
+                flag = false;
             }
         }
         // check for minimal length by the way
-        if (count < 5) {
+        if (count < 5 || !flag) {
             alert(`wrong user name, please try again`);
         }
     }
@@ -38,30 +39,27 @@ const Home = () => {
         // contains one Uppercase
         for (let i = 65; i < 91; i++) {
             if (password.indexOf(String.fromCharCode(i))) {
-                count++
-                break
+                count++;
             }
         }
         // contains one Lowercase
-        for (let i = 61; i < 123; i++) {
-            if (password.indexOf(String.fromCharCode(i))) {
-                count++
-                break
+        for (let j = 61; j < 123; j++) {
+            if (password.indexOf(String.fromCharCode(j))) {
+                count++;
             }
         }
         // contains one digit
-        for (let i = 48; i < 58; i++) {
-            if (password.indexOf(String.fromCharCode(i))) {
-                count++
-                break
+        for (let k = 48; k < 58; k++) {
+            if (password.indexOf(String.fromCharCode(k))) {
+                count++;
             }
         }
         if (count === 4) {
-            alert(`Hey ${userName}! welcome`)
+            alert(`Hey ${userName}! welcome`);
             window.location.replace(`/Login`);
         }
         else {
-            alert(`wrong password, please try again`)
+            alert(`wrong password, please try again`);
         }
     }
 
@@ -75,7 +73,7 @@ const Home = () => {
                 <input className={styles.input} placeholder='Username...' onChange={(e) => {
                     setUserName(e.target.value);
                 }} />
-                <text>password should contain at least one Uppercase and Lowercase letter and one digit</text>
+                <text>password should contain at least one Uppercase and Lowercase letter and one digit, at least 8 chars</text>
                 <input className={styles.input} placeholder='Password...' onChange={(e) => {
                     setPassword(e.target.value);
                 }} />
