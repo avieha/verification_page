@@ -1,8 +1,12 @@
+import styles from './styles.module.css';
+
 const Login = () => {
 
     return (
-        <div>
-            <h1>Login Successfully!</h1>
+        <div className={styles.container}>
+            <div className={styles.formContainer}>
+                <h1>Login Successfully!</h1>
+            </div>
         </div>
     )
 }
