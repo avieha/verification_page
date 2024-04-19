@@ -59,7 +59,7 @@ const Home = () => {
         }
         if (count === 4) {
             alert(`Hey ${userName}! welcome`);
-            window.location.replace(`/Login`);
+            window.location.replace('/login');
         }
         else {
             alert(`wrong password, please try again`);
