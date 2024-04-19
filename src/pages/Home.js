@@ -11,7 +11,7 @@ const Home = () => {
     }
 
     const verify_username = () => {
-        let count = 0
+        let count = 0;
         let flag = true;
         // checks if contains only letters, digits and `_`, `-`
         for (let i = 0; i < userName.length; i++) {
@@ -31,27 +31,30 @@ const Home = () => {
     }
 
     const verify_password = () => {
-        let count = 0
+        let count = 0;
         // at least 8 charachters
         if (password.length > 7) {
-            count++
+            count++;
         }
         // contains one Uppercase
         for (let i = 65; i < 91; i++) {
-            if (password.indexOf(String.fromCharCode(i))) {
+            if (password.indexOf(String.fromCharCode(i)) !== -1) {
                 count++;
+                break;
             }
         }
         // contains one Lowercase
-        for (let j = 61; j < 123; j++) {
-            if (password.indexOf(String.fromCharCode(j))) {
+        for (let j = 97; j < 123; j++) {
+            if (password.indexOf(String.fromCharCode(j)) !== -1) {
                 count++;
+                break;
             }
         }
         // contains one digit
         for (let k = 48; k < 58; k++) {
-            if (password.indexOf(String.fromCharCode(k))) {
+            if (password.indexOf(String.fromCharCode(k)) !== -1) {
                 count++;
+                break;
             }
         }
         if (count === 4) {
