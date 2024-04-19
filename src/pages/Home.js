@@ -24,11 +24,9 @@ const Home = () => {
         <div className={styles.container}>
             <div className={styles.formContainer}>
                 <h1>{`Login`}</h1>
-                <h5>user name should contain only letters and digits</h5>
                 <input className={styles.input} placeholder='Username...' onChange={(e) => {
                     setUserName(e.target.value);
                 }} />
-                <h5>password should contain at least one Uppercase and Lowercase letter and one digit, at least 8 chars</h5>
                 <input className={styles.input} placeholder='Password...' onChange={(e) => {
                     setPassword(e.target.value);
                 }} />
