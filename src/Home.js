@@ -13,6 +13,7 @@ const Home = () => {
         const user = existingUsers.find(user => user.userName === userName && user.password === password);
         if (user) {
             // User found
+            console.log("Logged in");
             window.location.replace('/login');
         } else {
             // User not found or password incorrect
