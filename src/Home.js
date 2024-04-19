@@ -1,10 +1,11 @@
 import styles from './styles.module.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const login = () => {
         // Retrieve users from local storage
@@ -14,7 +15,7 @@ const Home = () => {
         if (user) {
             // User found
             console.log("Logged in");
-            window.location.replace('/login');
+            navigate('/login');
         } else {
             // User not found or password incorrect
             alert("Invalid username or password.");

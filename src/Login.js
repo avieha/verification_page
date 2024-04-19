@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 const Login = () => {
 
-    alert("welcome!");
+    console.log("inside component");
     
     return (
         <div className={styles.container}>

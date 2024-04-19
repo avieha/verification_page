@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.css';
 
 const Register = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const register = () => {
         // check if user already exists
@@ -20,7 +22,7 @@ const Register = () => {
             const updatedUsers = [...existingUsers, newUser];
             localStorage.setItem('users', JSON.stringify(updatedUsers));
             alert("Registered Successfully!");
-            window.location.replace('/');
+            navigate('/');
         }
         else {
             // user not found or password incorrect
